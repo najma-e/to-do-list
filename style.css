@@ -3,6 +3,7 @@
   --border-radius: 5px;
   --border-width: 3px;
   --text-shadow: 0 0 1px black;
+  --light-grey: rgb(177, 177, 177);
 }
 body {
   /* background-image: url("https://image.freepik.com/free-vector/paper-note-vector-frame-memphis-brown-background_53876-108785.jpg"); */
@@ -110,4 +111,8 @@ body {
   /*  border-radius: 50%;
   margin-left: 380px; */
   /* display: block; */
+}
+
+.myList:hover {
+  background-color: var(--light-grey);
 }

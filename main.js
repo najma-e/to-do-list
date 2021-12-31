@@ -27,6 +27,8 @@ button.addEventListener("click", function (event) {
     deleteBtn.classList.add("delete-btn");
     deleteBtn.innerText = "x";
     list.appendChild(deleteBtn);
+    //makes sure that any input has no strkethrough initially
+    list.style.textDecoration = "none";
     //textbox is automatically reset/cleared when button is clicked
     input.value = null;
   }
@@ -44,6 +46,15 @@ input.addEventListener("keyup", function (event) {
 
 deleteBtn.addEventListener("click", function (event) {
   orderedList.removeChild(list);
+});
+
+//when li element is clicked, the element is crossed through
+list.addEventListener("click", function (event) {
+  if (list.style.textDecoration != "line-through") {
+    list.style.textDecoration = "line-through";
+  } else {
+    list.style.textDecoration = "none";
+  }
 });
 
 /* let ol = document.querySelector(".ol");
