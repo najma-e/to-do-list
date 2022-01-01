@@ -57,6 +57,24 @@ list.addEventListener("click", function (event) {
   }
 });
 
+//api fetch request to get inspiring quotes to put on page above to-do list
+
+async function fetchQuotes() {
+  let response = await fetch("https://quotes.rest/qod?category=inspire");
+  let data = await response.json();
+  console.log(data.contents.quotes[0]);
+  //select header which quote will be a part of and make quote the inner text of element
+  let quote = document.getElementById("quote");
+  quote.innerText = data.contents.quotes[0].quote;
+  //select header which author will be a part of and make author the inner text of element
+  let author = document.getElementById("author");
+  author.innerText = data.contents.quotes[0].author;
+}
+
+fetchQuotes();
+
+/////////////////////////////////////////////////////////////////////////////////////
+
 /* let ol = document.querySelector(".ol");
 let allList = ul.children;
 
@@ -88,3 +106,25 @@ for (let i = 0; i < allList.length; i++) {
 /* deleteBtn.parentNode.remove(); */
 /* let itemToRemove = document.querySelector(".myList");
   ul.parentNode.removeChild(itemToRemove); */
+
+/* async function getRandomQuote(data) {
+  /* for (let i = 0; i < 1; i += 1) { */
+// let randomQuote = await data[Math.floor(Math.random * data.length)];
+// return randomQuote;
+//}
+//
+//async function fetchQuotes() {
+//  let response = await fetch("https://type.fit/api/quotes");
+//  let data = await response.json();
+//  /* console.log(data); */
+//  let singleQuote = await getRandomQuote(data);
+//  console.log(singleQuote);
+//}
+//
+//fetchQuotes();
+
+/* async function getRandomQuote(data) {
+// for (let i = 0; i < 1; i += 1) { 
+  let randomQuote = await data[Math.floor(Math.random * data.length)];
+  return randomQuote;
+} */
