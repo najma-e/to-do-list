@@ -134,7 +134,7 @@ body {
   text-decoration: underline;
 }
  */
-#quote:before {
+/* #quote:before {
   content: open-quote;
   font-weight: bold;
   font-size: 20px;
@@ -145,7 +145,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   color: black;
-}
+} */
 
 /* .ol {
   background-color: white;
